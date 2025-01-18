@@ -1,0 +1,29 @@
+@use "./colors";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Tinos", serif;
+}
+
+body {
+  font-size: 1.25rem;
+  background: colors.$bg;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: normal;
+}
+
+h5 {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+h6 {
+  font-size: 1.25rem;
+  font-family: "Sorts Mill Goudy", "Tinos", serif;
+  font-weight: normal;
+}

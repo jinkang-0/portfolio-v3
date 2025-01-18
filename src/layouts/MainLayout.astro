@@ -1,0 +1,31 @@
+---
+import Navbar from "@/components/ui/Navbar.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+  <main>
+    <Navbar />
+    <div>
+      <slot />
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+
+    div {
+      width: min(90%, 1280px);
+    }
+  }
+</style>

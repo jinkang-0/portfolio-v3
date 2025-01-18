@@ -1,0 +1,21 @@
+---
+import NavbarLink from "@/components/ui/NavbarLink.astro";
+---
+
+<nav>
+  <NavbarLink href="/">About</NavbarLink>
+  <NavbarLink href="/work">Work</NavbarLink>
+  <NavbarLink href="/portfolio">Portfolio</NavbarLink>
+  <NavbarLink href="/contact">Contact</NavbarLink>
+</nav>
+
+<style lang="scss">
+  nav {
+    display: flex;
+    gap: 64px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 40px;
+  }
+</style>

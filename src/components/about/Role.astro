@@ -1,0 +1,68 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="role">
+  <h5>{title}</h5>
+  <div class="details">
+    <div class="divider"></div>
+    <p><slot /></p>
+  </div>
+</div>
+
+<style lang="scss">
+  @use "../../styles/colors";
+
+  $titleWidth: 20rem;
+  $transition: 200ms;
+
+  .role {
+    position: relative;
+
+    h5 {
+      color: colors.$grayText;
+      cursor: default;
+      transition: $transition;
+      width: $titleWidth;
+      padding: 2px 0;
+
+      &:hover {
+        color: black;
+
+        & + .details {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .details {
+    position: absolute;
+    top: 0.5rem;
+    left: $titleWidth;
+    display: grid;
+    grid-template-columns: clamp(20px, 10vw, 200px) 1fr;
+    gap: 24px;
+    opacity: 0;
+    transition: $transition;
+
+    p {
+      color: colors.$darkGrayText;
+      font-size: 1.5rem;
+      width: clamp(200px, 100%, 600px);
+      cursor: default;
+    }
+  }
+
+  .divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: colors.$grayBorder;
+    margin-top: 0.75rem;
+  }
+</style>
