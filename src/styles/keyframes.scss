@@ -1,0 +1,13 @@
+@keyframes drop-out {
+  100% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+}
+
+@keyframes pop-in {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}

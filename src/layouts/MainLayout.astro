@@ -1,12 +1,30 @@
 ---
 import Navbar from "@/components/Navbar.astro";
 import Layout from "@/layouts/Layout.astro";
+
+const anim = {
+  old: {
+    name: "drop-out",
+    duration: "250ms",
+    easing: "ease-in"
+  },
+  new: {
+    name: "pop-in",
+    delay: "250ms",
+    easing: "ease-out"
+  }
+};
+
+const customTransition = {
+  forwards: anim,
+  backwards: anim
+};
 ---
 
 <Layout>
   <main>
     <Navbar />
-    <div>
+    <div transition:animate={customTransition}>
       <slot />
     </div>
   </main>
