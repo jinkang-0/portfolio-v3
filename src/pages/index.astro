@@ -4,29 +4,35 @@ import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <h1>Jinkang Fang</h1>
-  <div class="container">
-    <Role title="Software Engineer">
-      I've been making software since 2019. I've worked with Typescript,
-      Javascript, Python, C, Java, and Rust, with relative proficiency in that
-      order.
-    </Role>
-    <Role title="Fullstack Developer">
-      My focus has been primarily on making interactive websites that are
-      user-friendly and easy to use. I've worked with frameworks such as
-      Next.js, React, and Vue, in combination with cloud services like MongoDB,
-      Supabase, Google Cloud, and AWS.
-    </Role>
-    <Role title="Student">
-      I'm an undergrad at UC Berkeley studying computer science, but I'm always
-      interested in learning new things, whether technical or not. Lately, I've
-      been getting into tai chi and photography.
-    </Role>
-  </div>
+  <article>
+    <h1>Jinkang Fang</h1>
+    <div class="content">
+      <Role title="Software Engineer">
+        I've been making software since 2019. I've worked with Typescript,
+        Javascript, Python, C, Java, and Rust, with relative proficiency in that
+        order.
+      </Role>
+      <Role title="Fullstack Developer">
+        My focus has been primarily on making interactive websites that are
+        user-friendly and easy to use. I've worked with frameworks such as
+        Next.js, React, and Vue, in combination with cloud services like
+        MongoDB, Supabase, Google Cloud, and AWS.
+      </Role>
+      <Role title="Student">
+        I'm an undergrad at UC Berkeley studying computer science, but I'm
+        always interested in learning new things, whether technical or not.
+        Lately, I've been getting into tai chi and photography.
+      </Role>
+    </div>
+  </article>
 </MainLayout>
 
 <style lang="scss">
-  .container {
+  article {
+    grid-column: content;
+  }
+
+  .content {
     width: 100%;
     display: flex;
     flex-direction: column;

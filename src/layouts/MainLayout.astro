@@ -22,9 +22,9 @@ const customTransition = {
 ---
 
 <Layout>
-  <main>
+  <main class="layout-grid">
     <Navbar />
-    <div transition:animate={customTransition}>
+    <div class="layout-grid" transition:animate={customTransition}>
       <slot />
     </div>
   </main>
@@ -32,18 +32,14 @@ const customTransition = {
 
 <style lang="scss">
   main {
-    display: flex;
-    flex-direction: column;
     width: 100%;
     min-height: 100vh;
     min-height: 100svh;
     position: relative;
-    align-items: center;
-    padding: 0 20px;
     padding-top: 35svh;
 
     div {
-      width: min(90%, 1280px);
+      grid-column: full;
     }
   }
 </style>

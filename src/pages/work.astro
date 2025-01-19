@@ -1,7 +1,69 @@
 ---
+import WorkShowcase from "@/components/WorkShowcase";
 import MainLayout from "@/layouts/MainLayout.astro";
+import { imagesHackForImpact, imagesIJP, imagesCalTaiji } from "@/data/work";
 ---
 
 <MainLayout>
   <h1>Featured work</h1>
+  <article>
+    <WorkShowcase
+      title="Cal Taiji Website"
+      type="Website"
+      date="January 2025"
+      codeUrl="https://github.com/jinkang-0/caltaiji"
+      liveUrl="https://caltaiji.vercel.app/"
+      images={imagesCalTaiji}
+      client:load
+    >
+      A website made for Cal Taiji, the official taiji club at UC Berkeley, to
+      help promote the club and its events. I worked on this project as a solo
+      developer and learned much about the importance of communication with
+      clients and the design process.
+    </WorkShowcase>
+    <WorkShowcase
+      title="IJP User Portal"
+      type="Web Application"
+      date="August 2023 - May 2024"
+      codeUrl="https://github.com/calblueprint/immigration-justice-project"
+      liveUrl="https://probono-immigrationjusticeproject.calblueprint.org/"
+      images={imagesIJP}
+      client:load
+    >
+      A user portal made for the Immigration Justice Project to help connect
+      volunteer attorneys with immigrants in need of legal representation. Made
+      in collaboration with a team of 6 as a part of Blueprint, I learned much
+      about teamwork in software and the Agile methodology.
+    </WorkShowcase>
+    <WorkShowcase
+      title="Hack for Impact"
+      type="Website"
+      date="January 2024"
+      codeUrl="https://github.com/calblueprint/hack-for-impact"
+      liveUrl="https://hackforimpact.calblueprint.org/"
+      images={imagesHackForImpact}
+      client:load
+    >
+      Hack for Impact was a 24-hour hackathon that brought together students
+      from across the country to build technology solutions for social good. I
+      led the website development with a team of seven in a 2 week deadline
+      before it went live.
+    </WorkShowcase>
+  </article>
 </MainLayout>
+
+<style lang="scss">
+  h1 {
+    grid-column: content;
+    margin-bottom: 64px;
+  }
+
+  article {
+    grid-column: full;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+    padding-bottom: 100px;
+  }
+</style>

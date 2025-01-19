@@ -27,3 +27,8 @@ h6 {
   font-family: "Sorts Mill Goudy", "Tinos", serif;
   font-weight: normal;
 }
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: [full-start] 20px [breakout-start] 12% [content-start] 1fr [content-end] 12% [breakout-end] 20px [full-end];
+}

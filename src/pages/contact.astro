@@ -1,25 +1,31 @@
 ---
 import ContactCard from "@/components/ContactCard.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
-import EmailIcon from "@/components/icons/EmailIcon.astro";
-import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import EmailIcon from "@/components/icons/EmailIcon";
+import GitHubIcon from "@/components/icons/GitHubIcon";
 ---
 
 <MainLayout>
-  <h1>Jinkang Fang</h1>
-  <div class="contacts">
-    <ContactCard>
-      <EmailIcon />
-      <a href="mailto:jinkang.fang@gmail.com">jinkang.fang@gmail.com </a>
-    </ContactCard>
-    <ContactCard>
-      <GitHubIcon />
-      <a href="https://github.com/jinkang-0" target="_blank">jinkang-0</a>
-    </ContactCard>
-  </div>
+  <article class="container">
+    <h1>Jinkang Fang</h1>
+    <div class="contacts">
+      <ContactCard>
+        <EmailIcon />
+        <a href="mailto:jinkang.fang@gmail.com">jinkang.fang@gmail.com </a>
+      </ContactCard>
+      <ContactCard>
+        <GitHubIcon />
+        <a href="https://github.com/jinkang-0" target="_blank">jinkang-0</a>
+      </ContactCard>
+    </div>
+  </article>
 </MainLayout>
 
 <style lang="scss">
+  .container {
+    grid-column: content;
+  }
+
   .contacts {
     display: flex;
     flex-direction: column;

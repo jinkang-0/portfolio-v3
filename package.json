@@ -9,9 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^4.1.5",
     "@fontsource/sorts-mill-goudy": "^5.1.1",
     "@fontsource/tinos": "^5.1.1",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
     "astro": "^5.1.7",
-    "sass": "^1.83.4"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sass": "^1.83.4",
+    "swiper": "^11.2.1"
   }
 }
