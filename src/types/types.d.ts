@@ -4,4 +4,5 @@ export type ProjectType =
   | "Desktop Application"
   | "Mobile Application"
   | "Figma Plugin"
-  | "Video Game";
+  | "Video Game"
+  | "Web Game";

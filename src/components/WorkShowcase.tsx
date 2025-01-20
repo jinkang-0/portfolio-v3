@@ -62,11 +62,21 @@ export default function WorkShowcase({
         <aside>
           <p>{children}</p>
           <footer>
-            <a href={codeUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              className="button"
+              href={codeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <GitHubIcon />
               Source code
             </a>
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+            <a
+              className="button"
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View project
               <ExternalIcon />
             </a>

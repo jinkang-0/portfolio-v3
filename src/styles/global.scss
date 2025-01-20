@@ -32,3 +32,57 @@ h6 {
   display: grid;
   grid-template-columns: [full-start] 20px [breakout-start] 12% [content-start] 1fr [content-end] 12% [breakout-end] 20px [full-end];
 }
+
+a.button {
+  text-decoration: none;
+  color: black;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  transition: 150ms;
+
+  &:not(.disabled):hover {
+    background: white;
+    border-color: colors.$grayBorder;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  &.disabled {
+    cursor: default;
+    color: colors.$grayText;
+    border-color: colors.$grayText;
+    position: relative;
+
+    path.stroke {
+      stroke: colors.$grayText;
+    }
+
+    path.fill {
+      fill: colors.$grayText;
+    }
+
+    &::after {
+      content: "";
+      background-image: url('data:image/svg+xml,<svg width="155" height="40" viewBox="0 0 155 40" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="154.875" y1="40.4841" x2="-0.124945" y2="0.484138" stroke="%23838383"/></svg>');
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+    }
+  }
+}
+
+.tooltip-container {
+  &:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, -10px);
+  }
+}

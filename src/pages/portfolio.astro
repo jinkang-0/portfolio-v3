@@ -1,15 +1,116 @@
 ---
+import PortfolioCard from "@/components/PortfolioCard.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
+import { portfolioImages } from "@/data/portfolio";
 ---
 
 <MainLayout>
   <article>
     <h1>Portfolio</h1>
+    <section>
+      <PortfolioCard
+        title="Radix Custom Color"
+        type="Figma Plugin"
+        image={portfolioImages.radixCustomColor}
+        codeUrl="https://github.com/jinkang-0/radix-custom-color"
+        liveUrl="https://www.figma.com/community/plugin/1377063548474040069/radix-custom-color"
+      >
+        A Figma plugin that allows users to import custom color palettes from
+        Radix Color into their Figma document.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Date Calculator"
+        type="Web Application"
+        image={portfolioImages.dateCalculator}
+        codeUrl="https://github.com/jinkang-0/DateCalculator"
+        liveUrl="https://jinkang-0.github.io/DateCalculator/"
+      >
+        A calculator that lets you virtually manipulate time with the power of
+        console commands.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Rythmic Blade"
+        type="Video Game"
+        image={portfolioImages.rhythmicBlade}
+        liveUrl="https://smallban.itch.io/rythmic-blade"
+      >
+        A rhythm game where you must parry attacks from enemies who can't help
+        but slice at the beat.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Melody Madness"
+        type="Web Application"
+        image={portfolioImages.melodyMadness}
+        codeUrl="https://github.com/jinkang-0/MelodyMadness"
+      >
+        A prompt to melody generator powered by ChatGPT, built with React and
+        Django.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Rototo's Escape"
+        type="Video Game"
+        image={portfolioImages.rototosEscape}
+        liveUrl="https://guardhei.itch.io/rototos-escape"
+      >
+        A platformer game where you play as Rototo, a science experiment, who
+        tries to escape the lab.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Pocket Cookbook"
+        type="Website"
+        image={portfolioImages.pocketCookbook}
+        codeUrl="https://github.com/jinkang-0/pocket-cookbook"
+      >
+        A digital collection of delicious recipes I learned from a stipened
+        program at the OUSD Central Kitchen.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Pathfinding Visualizer"
+        type="Web Application"
+        image={portfolioImages.pathfindingVisualization}
+        codeUrl="https://github.com/jinkang-0/Pathfinding-Visualization"
+        liveUrl="https://jinkang-0.github.io/Pathfinding-Visualization/"
+      >
+        A visualization of famous pathfinding algorithms like Dijkstra's and A*.
+        Comes with a maze generator.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Tetris"
+        type="Web Game"
+        image={portfolioImages.tetris}
+        codeUrl="https://github.com/jinkang-0/Tetris"
+        liveUrl="https://jinkang-0.github.io/Tetris/"
+      >
+        The classic game of Tetris on the web, bypasses most school firewalls.
+      </PortfolioCard>
+      <PortfolioCard
+        title="Chess"
+        type="Web Game"
+        image={portfolioImages.chess}
+        codeUrl="https://github.com/jinkang-0/Chess"
+        liveUrl="https://jinkang-0.github.io/Chess/"
+      >
+        A good old singleplayer chess game on the web, made with basic HTML,
+        CSS, and JavaScript.
+      </PortfolioCard>
+    </section>
   </article>
 </MainLayout>
 
 <style>
+  h1 {
+    margin-bottom: 64px;
+  }
+
   article {
     grid-column: content;
+    padding-bottom: 100px;
+
+    & > section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      column-gap: 82px;
+      row-gap: 128px;
+    }
   }
 </style>

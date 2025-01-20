@@ -1,0 +1,101 @@
+---
+import type { ProjectType } from "@/types/types";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import GitHubIcon from "./icons/GitHubIcon";
+import ExternalIcon from "./icons/ExternalIcon";
+import Tooltip from "./Tooltip.astro";
+
+interface Props {
+  image: ImageMetadata;
+  title: string;
+  type: ProjectType;
+  codeUrl?: string;
+  liveUrl?: string;
+}
+
+const { image, title, type, codeUrl, liveUrl } = Astro.props;
+---
+
+<div class="container">
+  <Image src={image} alt={`${title} preview`} />
+  <section>
+    <h5>{title}</h5>
+    <h6>{type}</h6>
+    <p><slot /></p>
+  </section>
+  <footer>
+    {
+      codeUrl ? (
+        <a
+          class="button"
+          href={codeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GitHubIcon />
+          Source code
+        </a>
+      ) : (
+        <a class="button disabled tooltip-container" href="javascript:void(0)">
+          <GitHubIcon />
+          Source code
+          <Tooltip>Source code is private.</Tooltip>
+        </a>
+      )
+    }
+    {
+      liveUrl ? (
+        <a
+          class="button"
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View project
+          <ExternalIcon />
+        </a>
+      ) : (
+        <a class="button disabled tooltip-container" href="javascript:void(0)">
+          View project
+          <ExternalIcon />
+          <Tooltip>Live view unavailable.</Tooltip>
+        </a>
+      )
+    }
+  </footer>
+</div>
+
+<style lang="scss">
+  @use "../styles/colors";
+
+  .container {
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid colors.$lightGrayBorder;
+      margin-bottom: 12px;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      h6 {
+        color: colors.$mildGrayText;
+      }
+
+      p {
+        margin-top: 4px;
+      }
+    }
+
+    footer {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+    }
+  }
+</style>
