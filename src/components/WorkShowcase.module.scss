@@ -27,6 +27,53 @@
   :global(.swiper-pagination) {
     position: static;
   }
+
+  :global(.swiper-button-prev),
+  :global(.swiper-button-next) {
+    color: white;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 55px;
+      height: 55px;
+      border-radius: 999999px;
+      background: black;
+      box-shadow: 0 0 12px 4px rgba(0, 0, 0, 0.2);
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 12px;
+      height: 24px;
+      transform: scale(1.5);
+      background-repeat: no-repeat;
+    }
+
+    &:global(.swiper-button-disabled) {
+      visibility: hidden;
+    }
+  }
+
+  :global(.swiper-button-prev) {
+    margin-left: 5%;
+
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='24' viewBox='0 0 12 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.29326 12.711L7.95026 18.368L9.36426 16.954L4.41426 12.004L9.36426 7.054L7.95026 5.64L2.29326 11.297C2.10579 11.4845 2.00047 11.7388 2.00047 12.004C2.00047 12.2692 2.10579 12.5235 2.29326 12.711Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  :global(.swiper-button-next) {
+    margin-right: 5%;
+
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='24' viewBox='0 0 12 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.071 12.711L3.414 18.368L2 16.954L6.95 12.004L2 7.054L3.414 5.64L9.071 11.297C9.25847 11.4845 9.36379 11.7388 9.36379 12.004C9.36379 12.2692 9.25847 12.5235 9.071 12.711Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+  }
 }
 
 .info {
@@ -74,6 +121,18 @@
     img {
       height: 200px;
     }
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+      &::before {
+        width: 40px;
+        height: 40px;
+      }
+
+      &::after {
+        transform: scale(1);
+      }
+    }
   }
 }
 
@@ -81,6 +140,11 @@
   .swiper:global(.swiper) {
     img {
       height: 150px;
+    }
+
+    :global(.swiper-button-prev),
+    :global(.swiper-button-next) {
+      visibility: hidden;
     }
   }
 

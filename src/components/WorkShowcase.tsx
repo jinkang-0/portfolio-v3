@@ -1,12 +1,13 @@
 import type { ProjectType } from "@/types/types";
 import styles from "./WorkShowcase.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination } from "swiper/modules";
+import { Mousewheel, Navigation, Pagination } from "swiper/modules";
+import GitHubIcon from "./icons/GitHubIcon";
+import ExternalIcon from "./icons/ExternalIcon";
 import "swiper/css";
 import "swiper/css/mousewheel";
 import "swiper/css/pagination";
-import GitHubIcon from "./icons/GitHubIcon";
-import ExternalIcon from "./icons/ExternalIcon";
+import "swiper/css/navigation";
 
 interface WorkShowcaseProps {
   images: ImageMetadata[];
@@ -31,7 +32,7 @@ export default function WorkShowcase({
     <div className={`layout-grid ${styles.container}`}>
       <Swiper
         className={styles.swiper}
-        modules={[Mousewheel, Pagination]}
+        modules={[Mousewheel, Pagination, Navigation]}
         spaceBetween={32}
         slidesPerView="auto"
         effect="coverflow"
@@ -42,6 +43,9 @@ export default function WorkShowcase({
         pagination={{
           enabled: true,
           clickable: true
+        }}
+        navigation={{
+          enabled: true
         }}
         centeredSlides
       >
