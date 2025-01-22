@@ -1,11 +1,13 @@
 ---
+import { trimSlash } from "@/lib/utils";
+
 interface Props {
   href: string;
 }
 
 const { href } = Astro.props;
 const pathname = Astro.url.pathname;
-const isActive = pathname === href;
+const isActive = trimSlash(pathname) === trimSlash(href);
 ---
 
 <a href={href} class={isActive ? "active" : ""}>
