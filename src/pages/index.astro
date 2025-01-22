@@ -1,5 +1,6 @@
 ---
-import Role from "@/components/Role.astro";
+import RoleDescription from "@/components/RoleDescription";
+import RoleToggle from "@/components/RoleToggle";
 import MainLayout from "@/layouts/MainLayout.astro";
 ---
 
@@ -7,27 +8,36 @@ import MainLayout from "@/layouts/MainLayout.astro";
   <article>
     <h1>Jinkang Fang</h1>
     <div class="content">
-      <Role title="Software Engineer">
-        I've been making software since 2019. I've worked with Typescript,
-        Javascript, Python, C, Java, and Rust, with relative proficiency in that
-        order.
-      </Role>
-      <Role title="Fullstack Developer">
-        My focus has been primarily on making interactive websites that are
-        user-friendly and easy to use. I've worked with frameworks such as
-        Next.js, React, and Vue, in combination with cloud services like
-        MongoDB, Supabase, Google Cloud, and AWS.
-      </Role>
-      <Role title="Student">
-        I'm an undergrad at UC Berkeley studying computer science, but I'm
-        always interested in learning new things, whether technical or not.
-        Lately, I've been getting into tai chi and photography.
-      </Role>
+      <div class="selectors">
+        <RoleToggle title="Software Engineer" client:load />
+        <RoleToggle title="Fullstack Developer" client:load />
+        <RoleToggle title="Student" client:load />
+      </div>
+      <div class="descriptions">
+        <RoleDescription role="Software Engineer" order={0} client:load>
+          I've been making software since 2019. I've worked with Typescript,
+          Javascript, Python, C, Java, and Rust, with relative proficiency in
+          that order.
+        </RoleDescription>
+        <RoleDescription role="Fullstack Developer" order={1} client:load>
+          My focus has been primarily on making interactive websites that are
+          user-friendly and easy to use. I've worked with frameworks such as
+          Next.js, React, and Vue, in combination with cloud services like
+          MongoDB, Supabase, Google Cloud, and AWS.
+        </RoleDescription>
+        <RoleDescription role="Student" order={2} client:load>
+          I'm an undergrad at UC Berkeley studying computer science, but I'm
+          always interested in learning new things, whether technical or not.
+          Lately, I've been getting into martial arts and photography.
+        </RoleDescription>
+      </div>
     </div>
   </article>
 </MainLayout>
 
 <style lang="scss">
+  @use "../styles/breakpoints";
+
   article {
     grid-column: content;
   }
@@ -35,6 +45,22 @@ import MainLayout from "@/layouts/MainLayout.astro";
   .content {
     width: 100%;
     display: flex;
-    flex-direction: column;
+
+    .selectors {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .descriptions {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: breakpoints.$lg) {
+    .content {
+      flex-direction: column;
+    }
   }
 </style>

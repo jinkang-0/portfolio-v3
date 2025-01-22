@@ -43,8 +43,6 @@ export default function WorkShowcase({
           enabled: true,
           clickable: true
         }}
-        // slidesOffsetBefore={64}
-        // slidesOffsetAfter={64}
         centeredSlides
       >
         {images.map((im, idx) => (

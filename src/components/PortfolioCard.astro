@@ -12,13 +12,14 @@ interface Props {
   type: ProjectType;
   codeUrl?: string;
   liveUrl?: string;
+  eagerLoad?: boolean;
 }
 
-const { image, title, type, codeUrl, liveUrl } = Astro.props;
+const { image, title, type, codeUrl, liveUrl, eagerLoad } = Astro.props;
 ---
 
 <div class="container">
-  <Image src={image} alt={`${title} preview`} />
+  <Image src={image} alt={`${title} preview`} priority={eagerLoad} />
   <section>
     <h5>{title}</h5>
     <h6>{type}</h6>
@@ -36,13 +37,7 @@ const { image, title, type, codeUrl, liveUrl } = Astro.props;
           <GitHubIcon />
           Source code
         </a>
-      ) : (
-        <a class="button disabled tooltip-container" href="javascript:void(0)">
-          <GitHubIcon />
-          Source code
-          <Tooltip>Source code is private.</Tooltip>
-        </a>
-      )
+      ) : null
     }
     {
       liveUrl ? (
@@ -55,13 +50,7 @@ const { image, title, type, codeUrl, liveUrl } = Astro.props;
           View project
           <ExternalIcon />
         </a>
-      ) : (
-        <a class="button disabled tooltip-container" href="javascript:void(0)">
-          View project
-          <ExternalIcon />
-          <Tooltip>Live view unavailable.</Tooltip>
-        </a>
-      )
+      ) : null
     }
   </footer>
 </div>

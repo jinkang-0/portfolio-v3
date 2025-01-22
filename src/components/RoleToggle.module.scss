@@ -1,0 +1,25 @@
+@use "../styles/colors";
+
+.role {
+  background: none;
+  border: none;
+  outline: none;
+  color: colors.$grayText;
+  cursor: pointer;
+  transition: 200ms;
+  width: 20rem;
+  padding: 2px 0;
+  text-align: left;
+
+  &:hover {
+    color: black;
+
+    & + .details {
+      opacity: 1;
+    }
+  }
+
+  &.selected {
+    color: black;
+  }
+}

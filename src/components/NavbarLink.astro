@@ -14,6 +14,7 @@ const isActive = pathname === href;
 
 <style lang="scss">
   @use "../styles/colors";
+  @use "../styles/breakpoints";
 
   a {
     font-size: 1.5rem;
@@ -52,6 +53,12 @@ const isActive = pathname === href;
       &::after {
         transform: scaleX(1);
       }
+    }
+  }
+
+  @media (max-width: breakpoints.$md) {
+    a {
+      font-size: 1.25rem;
     }
   }
 </style>

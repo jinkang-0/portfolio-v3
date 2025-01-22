@@ -10,6 +10,8 @@ import NavbarLink from "@/components/NavbarLink.astro";
 </nav>
 
 <style lang="scss">
+  @use "../styles/breakpoints";
+
   nav {
     display: flex;
     gap: 64px;
@@ -17,5 +19,12 @@ import NavbarLink from "@/components/NavbarLink.astro";
     top: 0;
     right: 0;
     padding: 40px;
+  }
+
+  @media (max-width: breakpoints.$md) {
+    nav {
+      gap: 24px;
+      padding: 20px;
+    }
   }
 </style>

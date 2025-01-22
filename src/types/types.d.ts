@@ -6,3 +6,5 @@ export type ProjectType =
   | "Figma Plugin"
   | "Video Game"
   | "Web Game";
+
+export type Role = "Software Engineer" | "Fullstack Developer" | "Student";

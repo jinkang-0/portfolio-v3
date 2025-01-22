@@ -1,0 +1,65 @@
+@use "../styles/colors";
+@use "../styles/breakpoints";
+
+.roleDesc {
+  overflow: hidden;
+  height: 0;
+
+  &.selected {
+    height: auto;
+
+    .roleDescInner {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:not(.selected) {
+    margin-top: 0 !important;
+  }
+}
+
+.roleDescInner {
+  display: grid;
+  grid-template-columns: clamp(20px, 10vw, 200px) 1fr;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 200ms;
+  padding-bottom: 30px;
+
+  p {
+    color: colors.$darkGrayText;
+    font-size: 1.5rem;
+    width: clamp(200px, 100%, 600px);
+    cursor: default;
+  }
+}
+
+.divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: colors.$grayBorder;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: breakpoints.$lg) {
+  .roleDesc {
+    margin-top: 0 !important;
+  }
+
+  .roleDescInner {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr;
+
+    p {
+      width: 100%;
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 100%;
+  }
+}
