@@ -92,6 +92,10 @@ a.button {
     font-size: 1rem;
   }
 
+  a.button {
+    font-size: 1rem;
+  }
+
   .layout-grid {
     display: grid;
     grid-template-columns: [full-start] 10px [breakout-start] 6% [content-start] 1fr [content-end] 6% [breakout-end] 10px [full-end];
@@ -101,5 +105,11 @@ a.button {
 @media (max-width: breakpoints.$sm) {
   h1 {
     font-size: 3rem;
+  }
+}
+
+@media (min-width: breakpoints.$xl) {
+  .layout-grid {
+    grid-template-columns: [full-start] 10px [breakout-start] 20% [content-start] 1fr [content-end] 20% [breakout-end] 10px [full-end];
   }
 }

@@ -99,7 +99,9 @@ import { portfolioImages } from "@/data/portfolio";
   </article>
 </MainLayout>
 
-<style>
+<style lang="scss">
+  @use "../styles/breakpoints";
+
   h1 {
     margin-bottom: 64px;
   }
@@ -113,6 +115,14 @@ import { portfolioImages } from "@/data/portfolio";
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       column-gap: 82px;
       row-gap: 128px;
+    }
+  }
+
+  @media (max-width: breakpoints.$sm) {
+    article {
+      & > section {
+        grid-template-columns: 1fr;
+      }
     }
   }
 </style>

@@ -22,7 +22,7 @@ const customTransition = {
 ---
 
 <Layout>
-  <main class="layout-grid">
+  <main>
     <Navbar />
     <div class="layout-grid" transition:animate={customTransition}>
       <slot />
@@ -39,7 +39,7 @@ const customTransition = {
     padding-top: 35svh;
 
     div {
-      grid-column: full;
+      width: 100%;
     }
   }
 </style>

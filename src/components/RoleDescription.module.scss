@@ -10,7 +10,6 @@
 
     .roleDescInner {
       opacity: 1;
-      transform: translateY(0);
     }
   }
 
@@ -24,7 +23,6 @@
   grid-template-columns: clamp(20px, 10vw, 200px) 1fr;
   gap: 24px;
   opacity: 0;
-  transform: translateY(-100%);
   transition: opacity 200ms;
   padding-bottom: 30px;
 

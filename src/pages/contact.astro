@@ -29,6 +29,8 @@ import LinkedInIcon from "@/components/icons/LinkedInIcon";
 </MainLayout>
 
 <style lang="scss">
+  @use "../styles/breakpoints";
+
   .container {
     grid-column: content;
   }
@@ -46,6 +48,12 @@ import LinkedInIcon from "@/components/icons/LinkedInIcon";
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: breakpoints.$sm) {
+    a {
+      font-size: 1.25rem;
     }
   }
 </style>
