@@ -48,6 +48,8 @@ export default function WorkShowcase({
           enabled: true
         }}
         centeredSlides
+        rewind
+        resistanceRatio={0}
       >
         {images.map((im, idx) => (
           <SwiperSlide key={idx}>

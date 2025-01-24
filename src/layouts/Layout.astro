@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.scss";
 import "@/styles/keyframes.scss";
+import { SEO } from "astro-seo";
 import { ClientRouter } from "astro:transitions";
 ---
 
@@ -13,6 +14,22 @@ import { ClientRouter } from "astro:transitions";
     <meta name="generator" content={Astro.generator} />
     <title>Jinkang Fang</title>
     <ClientRouter />
+    <SEO
+      title="Jinkang Fang"
+      description="Jinkang's personal website."
+      canonical="https://jfang.dev/"
+      openGraph={{
+        basic: {
+          title: "Jinkang Fang",
+          type: "website",
+          url: "https://jfang.dev/",
+          image: "/og_image.png"
+        }
+      }}
+      twitter={{
+        card: "summary_large_image"
+      }}
+    />
   </head>
   <body>
     <slot />
