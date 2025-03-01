@@ -1,12 +1,11 @@
 ---
 import WorkShowcase from "@/components/WorkShowcase";
-import MainLayout from "@/layouts/MainLayout.astro";
 import { imagesHackForImpact, imagesIJP, imagesCalTaiji } from "@/data/work";
 ---
 
-<MainLayout>
+<section class="layout-grid container">
   <h1>Featured work</h1>
-  <article>
+  <div>
     <WorkShowcase
       title="Cal Taiji Website"
       type="Website"
@@ -49,8 +48,8 @@ import { imagesHackForImpact, imagesIJP, imagesCalTaiji } from "@/data/work";
       led the website development with a team of seven in a 2 week deadline
       before it went live.
     </WorkShowcase>
-  </article>
-</MainLayout>
+  </div>
+</section>
 
 <style lang="scss">
   h1 {
@@ -58,7 +57,11 @@ import { imagesHackForImpact, imagesIJP, imagesCalTaiji } from "@/data/work";
     margin-bottom: 64px;
   }
 
-  article {
+  section.container {
+    grid-column: full;
+  }
+
+  section > div {
     grid-column: full;
     width: 100%;
     display: flex;

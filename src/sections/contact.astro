@@ -1,0 +1,56 @@
+---
+import ContactCard from "@/components/ContactCard.astro";
+import EmailIcon from "@/components/icons/EmailIcon";
+import GitHubIcon from "@/components/icons/GitHubIcon";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
+---
+
+<section>
+  <h1>Jinkang Fang</h1>
+  <div class="contacts">
+    <ContactCard>
+      <EmailIcon />
+      <a href="mailto:jinkang.fang@gmail.com">jinkang.fang@gmail.com </a>
+    </ContactCard>
+    <ContactCard>
+      <LinkedInIcon />
+      <a href="https://www.linkedin.com/in/jinkang-fang/" target="_blank">
+        Jinkang Fang
+      </a>
+    </ContactCard>
+    <ContactCard>
+      <GitHubIcon />
+      <a href="https://github.com/jinkang-0" target="_blank">jinkang-0</a>
+    </ContactCard>
+  </div>
+</section>
+
+<style lang="scss">
+  @use "../styles/breakpoints";
+
+  section {
+    grid-column: content;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (max-width: breakpoints.$sm) {
+    a {
+      font-size: 1.25rem;
+    }
+  }
+</style>
