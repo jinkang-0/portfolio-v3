@@ -6,12 +6,5 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: "https://jfang.dev",
-  prefetch: {
-    prefetchAll: true,
-    defaultStrategy: "load"
-  },
-  experimental: {
-    clientPrerender: true
-  }
+  site: "https://jfang.dev"
 });
