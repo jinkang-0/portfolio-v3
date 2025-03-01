@@ -4,7 +4,7 @@ import RoleToggle from "@/components/RoleToggle";
 ---
 
 <section>
-  <h1>Jinkang Fang</h1>
+  <h1 id="about">Jinkang Fang</h1>
   <div class="content">
     <div class="selectors">
       <RoleToggle title="Software Engineer" client:load />
@@ -37,7 +37,10 @@ import RoleToggle from "@/components/RoleToggle";
 
   section {
     grid-column: content;
-    min-height: 50svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10rem 0;
   }
 
   .content {

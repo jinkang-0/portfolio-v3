@@ -3,22 +3,70 @@ import NavbarLink from "@/components/NavbarLink.astro";
 ---
 
 <nav>
-  <NavbarLink href="/">About</NavbarLink>
-  <NavbarLink href="/work">Work</NavbarLink>
-  <NavbarLink href="/portfolio">Portfolio</NavbarLink>
-  <NavbarLink href="/contact">Contact</NavbarLink>
+  <NavbarLink href="#about">About</NavbarLink>
+  <NavbarLink href="#work">Work</NavbarLink>
+  <NavbarLink href="#portfolio">Portfolio</NavbarLink>
+  <NavbarLink href="#contact">Contact</NavbarLink>
 </nav>
 
+<script is:inline>
+  const navbar = document.querySelector("nav");
+  let prevPos = 0;
+
+  window.addEventListener("scroll", () => {
+    let curPos = window.scrollY;
+
+    if (prevPos > curPos) {
+      navbar.classList.remove("hidden");
+    } else {
+      navbar.classList.add("hidden");
+    }
+
+    prevPos = curPos;
+  });
+</script>
+
 <style lang="scss">
+  @use "../styles/colors";
   @use "../styles/breakpoints";
 
   nav {
+    grid-column: full;
     display: flex;
+    justify-content: flex-end;
     gap: 64px;
-    position: absolute;
+    position: sticky;
     top: 0;
     right: 0;
-    padding: 40px;
+    padding: 20px 40px;
+    z-index: 10;
+    overflow: hidden;
+    transition: top 200ms;
+
+    &.hidden {
+      top: -10rem;
+    }
+
+    &::before {
+      $blur: 6px;
+
+      content: "";
+      display: block;
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 95%;
+      padding: $blur;
+      background: colors.$bg;
+      background: linear-gradient(
+        0deg,
+        rgba(248, 248, 248, 0.8) 0%,
+        rgba(248, 248, 248, 1) 100%
+      );
+      filter: blur($blur);
+      z-index: 9;
+    }
   }
 
   @media (max-width: breakpoints.$md) {
