@@ -1,10 +1,9 @@
 import { useStore } from "@nanostores/react";
 import { selectedRole } from "@/lib/store";
-import type { Role } from "@/types/types";
 import styles from "./RoleToggle.module.scss";
 
 interface RoleToggleProps {
-  title: Role;
+  title: string;
 }
 
 export default function RoleToggle({ title }: RoleToggleProps) {

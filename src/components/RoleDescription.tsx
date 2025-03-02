@@ -1,10 +1,9 @@
 import { selectedRole } from "@/lib/store";
-import type { Role } from "@/types/types";
 import { useStore } from "@nanostores/react";
 import styles from "./RoleDescription.module.scss";
 
 interface RoleDescriptionProps {
-  role: Role;
+  role: string;
   order: number;
   children?: React.ReactNode;
 }

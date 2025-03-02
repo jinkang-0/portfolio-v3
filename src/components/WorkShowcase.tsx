@@ -1,4 +1,3 @@
-import type { ProjectType } from "@/types/types";
 import styles from "./WorkShowcase.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Navigation, Pagination } from "swiper/modules";
@@ -12,7 +11,7 @@ import "swiper/css/navigation";
 interface WorkShowcaseProps {
   images: ImageMetadata[];
   title: string;
-  type: ProjectType;
+  type: string;
   date: string;
   codeUrl: string;
   liveUrl: string;
