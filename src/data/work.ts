@@ -8,12 +8,12 @@ import IJP2 from "@/assets/ijp_2.png";
 import IJP3 from "@/assets/ijp_3.png";
 import IJP4 from "@/assets/ijp_4.png";
 import IJP5 from "@/assets/ijp_5.png";
-import CT1 from "@/assets/caltaiji1.png";
-import CT2 from "@/assets/caltaiji2.png";
-import CT3 from "@/assets/caltaiji3.png";
-import CT4 from "@/assets/caltaiji4.png";
-import CT5 from "@/assets/caltaiji5.png";
-import CT6 from "@/assets/caltaiji6.png";
+import CT1 from "@/assets/berkeleytaiji_1.png";
+import CT2 from "@/assets/berkeleytaiji_2.png";
+import CT3 from "@/assets/berkeleytaiji_3.png";
+import CT4 from "@/assets/berkeleytaiji_4.png";
+import CT5 from "@/assets/berkeleytaiji_5.png";
+import CT6 from "@/assets/berkeleytaiji_6.png";
 
 export const imagesHackForImpact = [HFI1, HFI2, HFI3, HFI4, HFI5];
 
